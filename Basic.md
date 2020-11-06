@@ -1,27 +1,8 @@
 # 前端介绍——html 三件套之 html
 
-- <font size = 5>[html](#html)</font>
-  - [什么是 html](#什么是-html)
-  - [例子](#例子)
-    - [笔趣阁](#笔趣阁)
-      - [头部](#头部)
-
----
-
-## html
-
-### 什么是 html
-
-HTML 是用来描述网页的一种语言。
-
-- HTML: **H**yper**T**ext **M**arkup **L**anguage 即超文本标记语言
-- HTML 不是一种编程语言，而是一种**标记语言**
-  > **标记语言**，是一种将文本以及文本相关的其他信息结合起来，展现出关于文档结构和数据处理细节的电脑文字编码。与文本相关的其他信息（包括文本的结构和表示信息等）与原来的文本结合在一起，但是使用标记进行标识。
-- 标记语言是一套标记标签 (markup tag)
-- HTML 使用标记标签来描述网页
-- HTML 文档包含了 HTML 标签及文本内容, 即上文中的 _与文本相关的其他信息_ , 通过 html 标签来编辑我们的网页
-
-<font  size = 4>关于这一部分, 我们只会做基础的介绍, 就像 C++之于 C 一样, 我们以后的工作开发只是基于 html, 无需使用 html 进行编写网页., 其中之一的原因是 html 只能编写静态网页, 但最重要的是,别人都帮我们编写好了**react**(https://react.docschina.org/)这种十分之好用的框架, 我们为什么要重复造轮子呢?</font>
+- [例子](#例子)
+  - [笔趣阁](#笔趣阁)
+    - [头部](#头部)
 
 ---
 
@@ -54,11 +35,11 @@ HTML 是用来描述网页的一种语言。
     var next_page = "24031461.html";
     var index_page = "/txt/99462/index.html";
     function jumpPage() {
-      if (event.keyCode==37) location=preview_page;
-      if (event.keyCode==39) location=next_page;
-      if (event.keyCode==13) location=index_page;
+      if (event.keyCode == 37) location = preview_page;
+      if (event.keyCode == 39) location = next_page;
+      if (event.keyCode == 13) location = index_page;
     }
-    document.onkeydown=jumpPage;
+    document.onkeydown = jumpPage;
   </script>
  </head>
  <body id="wrapper">
@@ -94,7 +75,7 @@ HTML 是用来描述网页的一种语言。
      <a href="http://www.shuquge.com/txt/99462/index.html">豪婿</a> &gt;第一章  我只想当个窝囊废     <span class="oninfo"><script>textselect();</script></span>
      <div style="float: right;">
       <a style="margin: 15px;padding: 5px;background-color: #459DF5;color: #ffffff;" href="Javascript:void(0);" onclick="javascript:$.ajax({cache:false,url:'/addbookcase/99462/24031460.php',success:function(data){if('-1'==data){alert('先登录再收藏！');}else{alert('加入书架成功！');}},error:function(){alert('加入书架成功！');}});">加入书架</a><a style="margin: 15px;padding: 5px;background-color: #459DF5;color: #ffffff;"  href="Javascript:void(0);" onclick="javascript:$.ajax({cache:false,url:'/recommend/99462.php',success:function(data){alert('推荐本书成功！');}});">推荐本书</a>
-    </div>
+     </div>
     </div>
    </div>
    <div class="content">
@@ -280,7 +261,7 @@ HTML 是用来描述网页的一种语言。
 
 #### 头部
 
-`<head>`
+**_`<head>`_**
 
 `<head>` 元素包含了所有的头部标签元素. 在 <`head>`元素中你可以插入脚本（scripts）, 样式文件（CSS），及各种 meta 信息.
 ~~这两个也可以插入在`<body>`.~~
@@ -326,7 +307,10 @@ HTML 是用来描述网页的一种语言。
 </head>
 ```
 
-`<meta>`
+**_`<!DOCTYPE html>`_**
+声明文档类型. 很久以前，早期的 HTML(大约 1991 年 2 月)，文档类型声明类似于链接，规定了 HTML 页面必须遵从的良好规则，能自动检测错误和其他有用的东西。使用如下：
+
+**_`<meta>`_**
 
 meta 标签描述了一些基本的元数据。  
 `<meta>` 标签提供了元数据.元数据也不显示在页面上，但会被浏览器解析。  
@@ -336,14 +320,15 @@ META 元素通常用于指定网页的描述，关键词，文件的最后修改
 
 _一般我们不需要特别关心这个_
 
-`<title>`
+**_`<title>`_**
 
 title 元素定义了页面的标题,比如这个的显示是这样的
 `<title>豪婿_第一章 我只想当个窝囊废_书趣阁_笔趣阁</title>`
 
 ![title](image/Basic/1604300292668.png)
 
-`<link>`
+**_`<link>`_**
+
 link 可以看作是通过这个网址从外部引入资源,或是其他,简而言之,link 定义了文档和外部资源的关系.
 比如像这个,即引入[css](#css)文件
 ` <link href="/css/style.css" rel="stylesheet" type="text/css" />`  
@@ -351,7 +336,8 @@ rel="stylesheet"指定了被链接的文档是个样式表.
 type 属性规定被链接文档的 MIME 类型。
 该属性最常见的 MIME 类型是 "text/css"，该类型描述样式表。
 
-`<script>`
+**_`<script>`_**
+
 用于加载脚本文件,这个以后会介绍([javascript](#javascript))
 
 **小结:**
@@ -364,3 +350,118 @@ type 属性规定被链接文档的 MIME 类型。
 |  `<meta>`  | 定义了 HTML 文档中的元数据         |
 | `<script>` | 定义了客户端的脚本文件             |
 | `<style>`  | 定义了 HTML 文档的样式文件         |
+
+### 内容
+
+**_`<body>`_**
+用这个标签包括起来的为 html 的主要内容，可以如果把 head 比作头文件，那么 body 就是你的代码内容.但是又因为 html 严格来说不是一种编译语言,所以这个比喻也不大恰当
+
+```html
+<div class="header">
+   <div class="wrap">
+    <div class="logo">
+     <a href="/" title="书趣阁_笔趣阁">书趣阁_笔趣阁<em>www.shuquge.com</em></a>
+    </div>
+    <script>search();</script>
+   </div>
+  </div>
+  <div class="nav">
+   <ul>
+    <li class="this"><a href="http://www.shuquge.com" title="书趣阁_笔趣阁">首页</a></li>
+    <li><a href="http://www.shuquge.com/category/1_1.html">玄幻</a></li>
+    <li><a href="http://www.shuquge.com/category/2_1.html">武侠</a></li>
+    <li><a href="http://www.shuquge.com/category/3_1.html">都市</a></li>
+    <li><a href="http://www.shuquge.com/category/4_1.html">历史</a></li>
+    <li><a href="http://www.shuquge.com/category/5_1.html">侦探</a></li>
+    <li><a href="http://www.shuquge.com/category/6_1.html">网游</a></li>
+    <li><a href="http://www.shuquge.com/category/7_1.html">科幻</a></li></li>
+    <li><a href="/top.html">排行榜</a></li>
+    <li><a href="/full/">全本</a></li>
+    <li><a href="/modules/article/bookcase.php">书架</a></li>
+   </ul>
+  </div>
+  <div class="clear"></div>
+  <script>read1();</script>
+```
+
+**_`<div>`_**
+
+**_`<div>`_** 标签定义 HTML 文档中的一个分隔区块或者一个区域部分。
+
+**_`<div>`_** 标签常用于组合块级元素，以便通过 CSS 来对这些元素进行格式化。
+
+**Tips:** 近似的,你们可以看作一张白纸上面你们画的方格,画成一块一块区域, 这里放抽屉,那里放导航栏.
+
+**_`<a>`_**
+
+_`<a>`_ 标签定义超链接，用于从一个页面链接到另一个页面。
+
+_`<a>`_ 元素最重要的属性是 href 属性，它指定链接的目标。
+
+在所有浏览器中，链接的默认外观如下：
+
+- 未被访问的链接带有下划线而且是蓝色的
+  ![](image/Basic/1604677523280.png)
+- 已被访问的链接带有下划线而且是紫色的
+  ![](image/Basic/1604677505794.png)
+- 活动链接带有下划线而且是红色的
+  ![](image/Basic/1604677662575.png)
+
+**_`<ul>` && `<ol>` && `<li>`_**
+
+`<ul>`代表构建一个无序列表
+![](image/Basic/1604681539727.png)
+`<ol>`代表构建一个有序列表
+![](image/Basic/1604681552269.png)
+`<li>`代表列表中的元素
+
+```html
+<div class="content">
+  <h1>第一章 我只想当个窝囊废</h1>
+  <div class="link">
+    <span
+      >推荐阅读：
+      <a href="http://www.shuquge.com/txt/5809/index.html">元尊</a>
+      、 <a href="http://www.shuquge.com/txt/38287/index.html">逆剑狂神</a> 、
+      <a href="http://www.shuquge.com/txt/13139/index.html">修真四万年</a> 、
+      <a href="http://www.shuquge.com/txt/79470/index.html">都市超级医仙</a> 、
+      <a href="http://www.shuquge.com/txt/107868/index.html">首充六元的剑</a> 、
+      <a href="http://www.shuquge.com/txt/70/index.html">大主宰</a> 、
+      <a href="http://www.shuquge.com/txt/73674/index.html">一品道门</a> 、
+      <a href="http://www.shuquge.com/txt/37426/index.html">末世大回炉</a> 、
+      <a href="http://www.shuquge.com/txt/73779/index.html">牧神记</a> 、
+      <a href="http://www.shuquge.com/txt/57849/index.html">万域之王</a>
+    </span>
+  </div>
+</div>
+```
+
+**_`<h1>`_**
+`<h1>` - `<h6>` 标签被用来定义 HTML 标题。
+
+`<h1>` 定义重要等级最高的标题。`<h6>` 定义重要等级最低的标题。
+
+**_`<span>`_**
+
+`<span>` 用于对文档中的行内元素进行组合。
+
+`<span>` 标签没有固定的格式表现。当对它应用样式时，它才会产生视觉上的变化。如果不对 `<span>` 应用样式，那么 `<span>` 元素中的文本与其他文本不会任何视觉上的差异。
+
+`<span>` 标签提供了一种将文本的一部分或者文档的一部分独立出来的方式。
+
+```html
+  <p>我的母亲有</p> <span style="color:blue;font-weight:bold">蓝色</span> 的眼睛。</p>
+
+  <p>我的母亲有</p>
+	<p style="color:blue;font-weight:bold">蓝色</p>
+	<p>的眼睛。</p>
+
+```
+
+两种写法虽然有相似的效果但是有着不同的可读性.
+
+***`<br>`***
+回车符,相当于'\n'
+
+&nbsp
+空白符
